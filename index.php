@@ -16,6 +16,9 @@ include_once('./factory/recordFactory.php');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
   <title>All Records</title>
 
   <style>
@@ -66,16 +69,39 @@ include_once('./factory/recordFactory.php');
     </form>
   </dialog>
 
+  <div class="wallet-card">current balance: 820.00</div>
 
   <?php
   require_once('./controller/recordController.php');
   $records = recordController::getRecords();
 
-  foreach ($records as $key => $record) {
-    # code...
-    recordCard($record);
-  }
+  $balance = 820.00;
+
+  // // if the balance on every record is on the top
+  // // the balance represents after record
+  // foreach ($records as $key => $record) {
+  //   $balance = number_format($balance, 2);
+  //   recordCard($record, $balance);
   
+  //   if (get_class($record) == "Income"){
+  //     $balance -= $record->amount;
+  //   } else{
+  //     $balance += $record->amount;
+  //   }
+  // }
+  
+  // if the balance on every record is on the bottom
+  // the balance represents before record
+  foreach ($records as $key => $record) {
+    if (get_class($record) == "Income") {
+      $balance -= $record->amount;
+    } else {
+      $balance += $record->amount;
+    }
+
+    $balance = number_format($balance, 2);
+    recordCard($record, $balance);
+  }
   ?>
 
 

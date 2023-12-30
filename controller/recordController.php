@@ -25,7 +25,7 @@ class recordController
   {
       global $dbh;
 
-      $stmt = $dbh->prepare("SELECT * FROM records");
+      $stmt = $dbh->prepare("SELECT * FROM records ORDER BY `datetime` DESC");
       $stmt->execute();
       $records_data = $stmt->fetchAll();
 

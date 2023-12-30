@@ -1,0 +1,89 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.wallet-card{
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  max-width: 300px;
+  background: linear-gradient(to right, #5e72e4, #825ee4);
+
+  color: white;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 20pt;
+  text-align: center;
+}
+
+.transaction-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  max-width: 300px;
+  background-color: #fff;
+  display: flex;
+
+
+  &.Income {
+    & .card-header {
+      background: greenyellow;
+    }
+
+    & .amount {
+      color: chartreuse;
+    }
+  }
+
+  &.Expense {
+    & .card-header {
+      background: orangered;
+    }
+
+    & .amount {
+      color: orangered;
+    }
+  }
+
+  & .card-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .amount {
+      text-align: right;
+      font-size: 20pt;
+      word-break: keep-all;
+      word-wrap: unset;
+      text-wrap: nowrap;
+    }
+
+    & .balance {
+      text-align: right;
+    }
+
+    & .category {
+      font-weight: bold;
+      font-size: 14pt;
+    }
+
+    & .type {
+      font-weight: normal;
+      font-size: small;
+    }
+
+    & .description {
+      font-style: italic;
+    }
+
+    & .datetime {
+      font-size: 10pt;
+    }
+
+  }
+}
