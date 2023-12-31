@@ -87,3 +87,61 @@ body {
 
   }
 }
+
+
+/* styles.css */
+
+.expense-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* button */
+
+.add-record-button {
+  margin: 20px;
+  background-color: transparent;
+  color: #4CAF50; /* Green color for the plus icon */
+  font-size: 16px;
+  border: 2px dashed #4CAF50;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-record-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}

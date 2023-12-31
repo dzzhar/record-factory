@@ -1,19 +1,21 @@
 <?php
 
+require_once "./database/database.php";
+
 class Wallet
 {
-  private $current_balance = 0;
+  private $balance = 0;
   private $initial_balance = 0;
 
   function __construct($balance)
   {
     $this->initial_balance = $balance;
-    $this->current_balance = $balance;
+    $this->balance = $balance;
   }
 
-  public function getCurrentBalance()
+  public function getBalance()
   {
-    return $this->current_balance;
+    return $this->balance;
   }
 
   public function getInitialBalance()
@@ -23,15 +25,21 @@ class Wallet
 
   public function setCurrentBalance($new_balance)
   {
-    $this->current_balance = $new_balance;
+    global $dbh;
+    $stmt = $dbh->prepare("UPDATE `wallets` SET `amount` = '$new_balance' WHERE `wallets`.`id` = 1");
+    $stmt->execute();
+    $this->balance = $new_balance;
   }
 
-  public function increaseBalance($amount)
-  {
-    $this->current_balance += $amount;
-  }
+  static public function getWallets(): Wallet{
+    global $dbh;
 
-  public function decreaseBalance($amount){
-    $this->current_balance -= $amount;
+    $stmt = $dbh->prepare("SELECT * FROM wallets LIMIT 1");
+    $stmt->execute();
+    $wallet_data = $stmt->fetch();
+
+    $wallet = new Wallet($wallet_data['amount']);
+
+    return $wallet;
   }
 }

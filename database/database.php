@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'pdpl project';
+$db = 'pdpl2';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
