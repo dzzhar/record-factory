@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'pdpl2';
+$db = 'record-factory';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
