@@ -78,7 +78,7 @@ $balance = $wallet->getBalance();
     </form>
   </dialog>
 
-  <div class="wallet-card">current balance: <?= $balance?></div>
+  <div class="wallet-card">current balance: <?= $balance ?></div>
 
   <?php
   require_once('./controller/recordController.php');
@@ -87,7 +87,7 @@ $balance = $wallet->getBalance();
 
   // shows all the cards records
   foreach ($records as $key => $record) {
-    if (get_class($record) == "Income") {
+    if (get_class($record) == "Expense") {
       $balance -= $record->amount;
     } else {
       $balance += $record->amount;
