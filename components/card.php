@@ -11,6 +11,8 @@ function recordCard(Record $record, $balance)
 
     $modifier = ($type == 'Income') ? '+' : '-';
 
+    $balance = number_format($balance, 2);
+
     // Output card HTML
     echo <<<HTML
         <div class="$type | transaction-card">
