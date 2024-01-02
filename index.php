@@ -13,8 +13,12 @@ switch ($route) {
   case 'add_record':
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       recordController::createRecord($_POST);
+      // Clear all elements in $_POST
+      foreach ($_POST as $key => $value) {
+        unset($_POST[$key]);
+      }
     }
-    
+
     break;
   default:
     echo '404 Not Found';
