@@ -1,9 +1,9 @@
 <?php
 
-// import interface record
+// import abstract class Record
 require_once('record.php');
 
-// create class implements record interface
+// create child class extends parent class
 class Expense extends Record
 {
     public function __construct($data)
