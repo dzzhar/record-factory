@@ -1,0 +1,147 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.wallet-card{
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  max-width: 300px;
+  background: linear-gradient(to right, #5e72e4, #825ee4);
+
+  color: white;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 20pt;
+  text-align: center;
+}
+
+.transaction-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  max-width: 300px;
+  background-color: #fff;
+  display: flex;
+
+
+  &.Income {
+    & .card-header {
+      background: greenyellow;
+    }
+
+    & .amount {
+      color: chartreuse;
+    }
+  }
+
+  &.Expense {
+    & .card-header {
+      background: orangered;
+    }
+
+    & .amount {
+      color: orangered;
+    }
+  }
+
+  & .card-body {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .amount {
+      text-align: right;
+      font-size: 20pt;
+      word-break: keep-all;
+      word-wrap: unset;
+      text-wrap: nowrap;
+    }
+
+    & .balance {
+      text-align: right;
+    }
+
+    & .category {
+      font-weight: bold;
+      font-size: 14pt;
+    }
+
+    & .type {
+      font-weight: normal;
+      font-size: small;
+    }
+
+    & .description {
+      font-style: italic;
+    }
+
+    & .datetime {
+      font-size: 10pt;
+    }
+
+  }
+}
+
+
+/* styles.css */
+
+.expense-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* button */
+
+.add-record-button {
+  margin: 20px;
+  background-color: transparent;
+  color: #4CAF50; /* Green color for the plus icon */
+  font-size: 16px;
+  border: 2px dashed #4CAF50;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-record-button:hover {
+  background-color: #4CAF50;
+  color: #fff;
+}
