@@ -87,7 +87,7 @@ $balance = $wallet->getBalance();
 
   // shows all the cards records
   foreach ($records as $key => $record) {
-    if (get_class($record) == "Expense") {
+    if (get_class($record) == "Income") {
       $balance += $record->amount;
     } else {
       $balance -= $record->amount;
