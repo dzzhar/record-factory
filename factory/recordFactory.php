@@ -4,7 +4,6 @@ require_once('./database/database.php');
 
 require_once('./models/expense.php');
 require_once('./models/income.php');
-// require_once('./models/transfer.php');
 
 // create a RecordFactory class
 class RecordFactory
@@ -17,8 +16,6 @@ class RecordFactory
             return new Expense($data);
         } elseif ($type === "income") {
             return new Income($data);
-        } elseif ($type === "transfer") {
-            return new Transfer();
         }
     }
 }
