@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pdpl2`
+-- Database: `record-factory`
 --
-CREATE DATABASE IF NOT EXISTS `pdpl2` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pdpl2`;
+CREATE DATABASE IF NOT EXISTS `record-factory` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `record-factory`;
 
 -- --------------------------------------------------------
 

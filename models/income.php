@@ -1,16 +1,14 @@
 <?php
 
-// import interface record
+// import abstract class Record
 require_once('record.php');
 
-// create class implements record interface
-
+// create child class extends parent class
 class Income extends Record
 {
     public function __construct($data)
     {
         $this->amount = $data['amount'];
-        // $t his->walletId = $data['walletId'];
         $this->description = $data['description'];
         $this->datetime = $data['datetime'];
         $this->category = $data['category'];

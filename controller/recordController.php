@@ -1,6 +1,6 @@
 <?php
 require_once("./factory/recordFactory.php");
-
+require_once("./models/wallet.php");
 
 class recordController
 {
@@ -40,8 +40,17 @@ class recordController
       echo "Error: ";
     }
 
+    // set the wallet balance
+    $wallet = Wallet::getWallets();
+    $balance = $wallet->getBalance();
+    if ($type == "income") {
+      $wallet->setCurrentBalance($balance + $amount);
+    } elseif ($type == "expense") {
+      $wallet->setCurrentBalance($balance - $amount);
+    }
+
     session_start();
-    $_SESSION['snackbar_message'] = "Your message here";
+    $_SESSION['snackbar_message'] = "Successfully created a new $type";
     $target = "./index.php";
     header("Location: $target");
     exit();

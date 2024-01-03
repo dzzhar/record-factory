@@ -78,7 +78,7 @@ $balance = $wallet->getBalance();
     </form>
   </dialog>
 
-  <div class="wallet-card">current balance: <?= $balance?></div>
+  <div class="wallet-card">current balance: <?= $balance ?></div>
 
   <?php
   require_once('./controller/recordController.php');
@@ -93,7 +93,6 @@ $balance = $wallet->getBalance();
       $balance += $record->amount;
     }
 
-    $balance = number_format($balance, 2);
     recordCard($record, $balance);
   }
   ?>
