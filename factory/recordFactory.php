@@ -4,21 +4,20 @@ require_once('./database/database.php');
 
 require_once('./models/expense.php');
 require_once('./models/income.php');
-// require_once('./models/transfer.php');
 
-// create a RecordFactory class
+// Membuat class RecordFactory
 class RecordFactory
 {
+    // Membuat objek dari class record
     public static function createRecord($data)
     {
         $type = $data['type'];
-        // create if-else
+        
+        // Membuat objek record berdasarkan type
         if ($type === "expense") {
             return new Expense($data);
         } elseif ($type === "income") {
             return new Income($data);
-        } elseif ($type === "transfer") {
-            return new Transfer();
         }
     }
 }

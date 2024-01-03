@@ -9,6 +9,7 @@ include_once('./factory/recordFactory.php');
 
 require_once('./models/wallet.php');
 
+// Mengambil data saldo wallet dari database
 $wallet = Wallet::getWallets();
 
 $balance = $wallet->getBalance();
@@ -26,24 +27,13 @@ $balance = $wallet->getBalance();
   <link rel="stylesheet" href="style.css">
 
   <title>All Records</title>
-
-  <style>
-    /* Style for the submit button */
-    .submit-button {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 
 <body>
 
   <button class="add-record-button" onclick="openModal()">+ Add Record</button>
 
+  <!-- Form dialog start -->
   <dialog id="modalDialog" class="expense-form">
     <button onclick="closeModal()">X </button>
 
@@ -71,21 +61,26 @@ $balance = $wallet->getBalance();
         <option value="clothing">Clothing</option>
         <option value="transportation">Transportation</option>
         <option value="salary">Salary</option>
-        <!-- Add more categories as needed -->
       </select><br>
 
       <input class="submit-button" type="submit" value="Submit">
     </form>
   </dialog>
+  <!-- Form dialog end -->
 
-  <div class="wallet-card">current balance: <?= $balance ?></div>
 
+  <div class="wallet-card">current balance:
+    <?= $balance ?>
+  </div>
+
+  <!-- menampilkan seluruh record card start -->
   <?php
   require_once('./controller/recordController.php');
 
+  // mengambil seluruh record dari controller 
   $records = recordController::getRecords();
 
-  // shows all the cards records
+  // menampilkan seluruh record dari array records
   foreach ($records as $key => $record) {
     if (get_class($record) == "Income") {
       $balance -= $record->amount;
@@ -93,20 +88,21 @@ $balance = $wallet->getBalance();
       $balance += $record->amount;
     }
 
+    // merender record card
     recordCard($record, $balance);
   }
   ?>
+  <!-- menampilkan seluruh record end -->
+
 
   <script>
-    // Function to open the modal
+    // fungsi untuk membuka modal dialog
     function openModal() {
-      // Show the dialog
       document.getElementById("modalDialog").showModal();
     }
 
-    // Function to close the modal
+    // fungsi untuk menutup modal dialog
     function closeModal() {
-      // Close the dialog
       document.getElementById("modalDialog").close();
     }
   </script>
@@ -116,6 +112,7 @@ $balance = $wallet->getBalance();
 
 
 <?php
+// Memunculkan alert sukses setelah menambahkan record
 if (isset($_SESSION['snackbar_message'])) {
   $snackbarMessage = $_SESSION['snackbar_message'];
   unset($_SESSION['snackbar_message']);

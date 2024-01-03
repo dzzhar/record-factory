@@ -1,6 +1,6 @@
 <?php
 
-// create abstract class record
+// Membuat abstract class record
 abstract class Record
 {
     public $amount = 0;

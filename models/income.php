@@ -3,7 +3,7 @@
 // import abstract class Record
 require_once('record.php');
 
-// create child class extends parent class
+// Membuat child class dari class record
 class Income extends Record
 {
     public function __construct($data)

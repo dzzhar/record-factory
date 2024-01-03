@@ -145,3 +145,13 @@ select {
   background-color: #4CAF50;
   color: #fff;
 }
+
+/* Form */
+.submit-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

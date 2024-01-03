@@ -15,7 +15,6 @@ $opt = [
 
 try{
   $dbh = new PDO($dsn, $user, $pass, $opt);
-  // echo "connected";
 }catch(PDOException $e){
   echo "disconnected";
   echo $e;
